@@ -1,0 +1,245 @@
+/* start global roles */
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+:root {
+    --main-font: 'Source Code Pro', monospace;
+}
+ul {
+    list-style: none;
+}
+/* small */
+@media (min-width:768px) {
+    .container {
+        width: 750px;
+    }
+}
+/* medium */
+@media (min-width:992px) {
+    .container {
+        width: 970px;
+    }
+}
+/* large */
+@media (min-width:1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+/* end global roles */
+body {
+    background-color: black;
+}
+.log {
+    background-image: url(../images/login-3.jpg);
+    background-size: cover;
+    height: 95vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin: 20px;
+    border-radius: 20px;
+}
+.log::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 / 40%);
+}
+.log .loading {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0 0 0 / 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation-name: hide;
+    animation-delay: 6s;
+    animation-fill-mode: forwards;
+    position: absolute;
+    z-index: 5;
+}
+@keyframes hide {
+    to {
+        visibility: hidden;   
+    }
+}
+.log .loading span {
+    display: block;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: rgb(134, 134, 134);
+    margin-left: 10px;
+    position: relative;
+    animation-name: moving;
+    animation-duration: .8s;
+    animation-timing-function: linear;
+    animation-iteration-count: 6;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+}
+.log .loading span:nth-child(2) {
+    animation-delay: .3s;
+}
+.log .loading span:nth-child(3) {
+    animation-delay: .6s;
+}
+.log .loading span:nth-child(4) {
+    animation-delay: .9s;
+}
+@keyframes moving {
+    to {
+        transform: translateY(-20px);
+        opacity: .2;
+    }
+}
+.content {
+    visibility: hidden;
+    position: relative;
+    right: 230px;
+    top: 10%;
+    background-image: linear-gradient(55deg, #ddd 20%, #ddd 40%, #ccc 40%, #ccc 80% );
+    height: 85%;
+    min-width: 25%;
+    border-bottom-right-radius: 90px;
+    border-top-left-radius: 90px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    animation-name: up;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 6s;
+}
+@keyframes up {
+    from {
+        visibility: visible;
+        transform: translateY(1000px);
+    }
+    to {
+        visibility: visible;
+        transform: translateY(0);
+    }
+}
+.content h2 {
+    font-family: 'Lobster', cursive;
+    letter-spacing: 0px;
+    font-weight: bold;
+    font-size: 40px;
+    text-transform: capitalize;
+    color: #000000;
+    margin-top: 60px;
+    margin-bottom: 50px;
+    background-color: white;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+}
+.content p.login {
+    font-size: 22px;
+    font-weight: bold;
+    font-family: 'FontAwesome';
+    margin-bottom: 30px;
+    width: 100%;
+    text-align: center;
+    background-color: white;
+    padding: 10px;
+}
+.content .user form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: space-between;
+    margin-bottom: 20px;
+}
+.content .user form label {
+    text-transform: capitalize;
+    color: #777;
+    padding: 5px;
+}   
+.content .user form input {
+    border: 1px solid black;
+    outline: none;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: transparent;
+    margin-bottom: 20px;
+}
+.content .user form input[type="submit"]{
+    margin-top: 15px;
+    background-color: black;
+    cursor: pointer;
+    color: white;
+    transition: .5s;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.content .user form input[type="submit"]:hover {
+    transform: scale(.9);
+}
+.content button {
+    width: 100%;
+    border: none;
+    padding: 5px;
+}
+.content button a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    transition: .5s;
+}
+.content button a:hover {
+    padding-left: 30px;
+}
+.content p:last-of-type {
+    padding: 20px;
+    font-size: 18px;
+    position: relative;
+    margin-top: 20px;
+}
+.content p:last-of-type::before {
+    content: "";
+    position: absolute;
+    width: 165px;
+    height: 1px;
+    background-color: black;
+    left: -150px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.content p:last-of-type::after {
+    content: "";
+    position: absolute;
+    width: 165px;
+    height: 1px;
+    background-color: black;
+    right: -150px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.icon i {
+    margin: 0 20px 10px;
+    font-size: 40px;
+    transition: .3s;
+    cursor: pointer;
+}
+.icon i:hover {
+    transform: scale(1.2);
+}
